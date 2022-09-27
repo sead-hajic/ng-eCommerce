@@ -1,0 +1,45 @@
+<h1 mat-dialog-title>Add Product</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productForm">
+    <mat-form-field appearance="standard">
+      <mat-label>Product Name</mat-label>
+      <input matInput formControlName="productName">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Product Category</mat-label>
+      <mat-select formControlName="productCategory">
+        <mat-option value="real-estate">Real Estate</mat-option>
+        <mat-option value="food">Food</mat-option>
+        <mat-option value="vehicles">Vehicles</mat-option>
+        <mat-option value="electronics">Electronics</mat-option>
+        <mat-option value="services">Services</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="date" appearance="standard">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <label for="">
+      <h3 style="margin-top: 10px;">Product Condition</h3>
+    </label>
+    <mat-radio-group class="radio-group" formControlName="stateOfProduct">
+      <mat-radio-button class="radio-button" *ngFor="let product of productState" [value]="product">{{ product }}
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field appearance="standard">
+      <mat-label>Price</mat-label>
+      <input type="number" matInput formControlName="price">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Addition Description</mat-label>
+      <textarea matInput cols="15" rows="10" formControlName="description"></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button type="submit" mat-raised-button color="primary" (click)="addProduct()">{{ actionButton }}</button>
+  <button style="margin-left: 5px;" mat-raised-button color="warn" mat-dialog-close>Close</button>
+</div>

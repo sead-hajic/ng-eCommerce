@@ -1,0 +1,23 @@
+{
+  "productList": [
+    {
+      "productName": "iphone",
+      "productCategory": "electronics",
+      "date": "2022-09-29T22:00:00.000Z",
+      "stateOfProduct": "Second Hand",
+      "price": 1200,
+      "description": "Used phone",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
